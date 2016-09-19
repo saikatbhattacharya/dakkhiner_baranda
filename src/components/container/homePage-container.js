@@ -35,8 +35,11 @@ class home extends React.Component {
 
   	closeSideBar = () => this.setState({sideBarOpen: false});
 
+	openSignUpForm = ()=>{
+
+	}
+
 	render = () => {
-		console.log(" Information printing: ", JSON.stringify(this.props.formObj));
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}>
 			<div>

@@ -1,16 +1,15 @@
 import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import style from '../../css/style.css';
 const overlayStyle={
     top:'50%',
 }
 const homeCard = () => (
   <Card>
-    <CardMedia
-      overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-    
-    >
-      <img src={"http://img.wallpaperfolder.com/f/4FB85481001A/feather-pen-and-paper-fountain.jpg"} />
+    <CardMedia>
+    <div className="overlay"/>
+      <img className="launchPageImage" src={"http://www.amarboi.org/contents/records/article/201508/77_1.jpg"} />
       
     </CardMedia>
   </Card>
