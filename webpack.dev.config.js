@@ -1,7 +1,7 @@
-import webpack from 'webpack';
-import path from 'path';
+const path = require('path')
+const webpack = require('webpack')
 
-export default {
+module.exports = {
   entry: [
     './src/index'
   ],
@@ -14,6 +14,10 @@ export default {
   devServer: {
     contentBase: './src'
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
       {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},

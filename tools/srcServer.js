@@ -1,31 +1,15 @@
-import express from 'express';
-import webpack from 'webpack';
-import path from 'path';
-import config from '../webpack.config';
-import open from 'open';
-import webpackMiddleWare from 'webpack-dev-middleware';
+const path = require('path')
+const express = require('express')
 
-/* eslint-disable no-console */
+module.exports = {
+  app: function () {
+    const app = express()
+    const indexPath = path.join(__dirname, '../src/index.html')
+    const publicPath = express.static(path.join(__dirname, '../src/css'))
 
-const port = 5000;
-const app = express();
-const compiler = webpack(config);
+    app.use('/public', publicPath)
+    app.get('/', function (_, res) { res.sendFile(indexPath) })
 
-//No files are written to disk, it handle the files in memory
-app.use(webpackMiddleWare(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
-
-
-app.get('*', function(req, res) {
-  res.sendFile(path.join( __dirname, '../src/index.html'));
-});
-
-app.listen(port, function(err) {
-  if (err) {
-    console.log(err);
-  } else {
-    open(`http://localhost:${port}`);
+    return app
   }
-});
+}

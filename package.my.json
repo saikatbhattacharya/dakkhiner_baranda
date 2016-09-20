@@ -2,8 +2,12 @@
   "name": "reactjs-starter-kit",
   "version": "1.0.0",
   "scripts": {
+    "prestart": "babel-node tools/startMessage.js",
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
-    "start": "node app.js"
+    "start": "npm-run-all --parallel open:src lint:watch",
+    "open:src": "babel-node app.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
+    "lint:watch": "npm run lint -- --watch"
   },
   "author": "Saikat Bhattacharya",
   "dependencies": {
