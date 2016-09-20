@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
-    "start": "node app.js"
+    "start": "node app.js",
+    "postinstall": "webpack -p --config webpack.prod.config.js"
   },
   "author": "Saikat Bhattacharya",
   "dependencies": {
