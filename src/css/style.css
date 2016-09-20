@@ -19,3 +19,12 @@
     opacity: 0.4;
 }
 
+.footer {
+  height:100px;
+  background-color: black;
+}
+
+.wrapper {
+  margin:4%;
+}
+

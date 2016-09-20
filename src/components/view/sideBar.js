@@ -17,11 +17,11 @@ export default class sideBar extends React.Component {
         >
           <List>
             <Subheader><img className='topLogo' src="https://raw.githubusercontent.com/saikatcts/dakkhiner_baranda/master/src/assets/images/logo_black.png"/></Subheader>
-            <MenuItem onTouchTap={this.props.closeSideBar} leftIcon={<ActionSupervisorAccount/>}>সম্পাদকমণ্ডলী</MenuItem>
+            <MenuItem onTouchTap={this.props.handleModalClose} leftIcon={<ActionSupervisorAccount/>}>Home</MenuItem>
           <MenuItem onTouchTap={this.props.closeSideBar}>সম্পাদকীয়</MenuItem>
           <MenuItem onTouchTap={this.props.closeSideBar}>আমাদের কথা</MenuItem>
           <MenuItem>সূচীপত্র</MenuItem>
-          <MenuItem onTouchTap={this.props.closeSideBar}>গল্প</MenuItem>
+          <MenuItem onTouchTap={this.props.handleModalOpen}>গল্প</MenuItem>
             <ListItem
               primaryText="Inbox"
               initiallyOpen={false}

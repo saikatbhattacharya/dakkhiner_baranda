@@ -27,8 +27,8 @@ class navbar extends React.Component {
                         anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
                         >
                         <MenuItem primaryText="Contact" />
-                        <MenuItem primaryText="New User" />
-                        <MenuItem primaryText="Sign In" />
+                        <MenuItem onTouchTap={this.props.openSignUpForm} primaryText="New User" />
+                        <MenuItem onTouchTap={this.props.openSignInForm} primaryText="Sign In" />
                         
                     </IconMenu>
                 }
